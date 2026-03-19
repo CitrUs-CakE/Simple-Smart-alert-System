@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>chart area</title>
+     <!--favicon-->
+    <link rel="icon" type="image/png" href="asset/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <button id="menu-btn">➜</button>
+    <nav id="sidebar">
+        <a href="index.html">HOME</a>
+        <a href="dashboard.html">DASHBOARD</a>
+        <a href="manual.html">CONTROL</a>
+    </nav>
+<!--main code -->
+    <div id="main">
+        <h2 style="color: var(--primary)">LIVE CHART FOR SENSOR READINGS</h2>
+
+<div class="sensor-analytics-container">
+    <div class="sensor-chart-header">
+        <h2 class="sensor-title">Historical Analytics</h2>
+        
+        <div class="sensor-controls-wrapper">
+            <select id="timeRange" class="sensor-select" onchange="updateSensorView(null, null)">
+                <option value="today">Last 24 Hours</option>
+                <option value="month">Last 30 Days</option>
+            </select>
+
+            <div class="sensor-btn-group">
+                <button id="btn-sensor-temp" class="sensor-opt-btn active" onclick="updateSensorView('temp', this)">Temp</button>
+                <button id="btn-sensor-hum" class="sensor-opt-btn" onclick="updateSensorView('hum', this)">Hum</button>
+                <button id="btn-sensor-gas" class="sensor-opt-btn" onclick="updateSensorView('gas', this)">Gas</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="sensor-canvas-frame">
+        <canvas id="sensorMainChart"></canvas>
+    </div>
+</div>
+    </div>
+    
+   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

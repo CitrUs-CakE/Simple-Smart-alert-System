@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <title>ISBT | Control</title>
+     <!--favicon-->
+    <link rel="icon" type="image/png" href="asset/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button id="menu-btn">➜</button>
+    <nav id="sidebar">
+        <a href="index.html">HOME</a>
+        <a href="dashboard.html">DASHBOARD</a>
+
+        <a href="manual.html">CONTROL</a>
+    </nav>
+    
+<div id="soothing-console-wrapper">
+    <div class="soothing-card">
+        <div class="soothing-header">
+            <h2>System Control Panel</h2>
+            <p>Manual Overrides & Safety Logic</p>
+        </div>
+        
+        <div class="soothing-stack">
+            <div class="soothing-row">
+                <div class="soothing-info">
+                    <span class="dot dot-gas"></span>
+                    <label>Gas Safety Relay</label>
+                </div>
+                <button class="soothing-btn btn-gas-color" onclick="sendManualCommand(1, 'Gas Manual')">Activate Gas</button>
+            </div>
+
+            <div class="soothing-row">
+                <div class="soothing-info">
+                    <span class="dot dot-temp"></span>
+                    <label>Climate Control Relay</label>
+                </div>
+                <button class="soothing-btn btn-temp-color" onclick="sendManualCommand(2, 'Temp Manual')">Activate Temp</button>
+            </div>
+
+            <div class="soothing-row">
+                <div class="soothing-info">
+                    <span class="dot dot-both"></span>
+                    <label>Master Override</label>
+                </div>
+                <button class="soothing-btn btn-both-color" onclick="sendManualCommand(3, 'Full Manual')">Activate Both</button>
+            </div>
+
+            <div class="soothing-row">
+                <div class="soothing-info">
+                    <span class="dot dot-auto"></span>
+                    <label>System Automation</label>
+                </div>
+                <button class="soothing-btn btn-auto-color" onclick="sendManualCommand(0, 'Auto Mode')">Resume Auto</button>
+            </div>
+        </div>
+        
+        <div id="soothing-status">
+            <small>Communication Status: <span id="sync-text">Synchronized with ESP32</span></small>
+        </div>
+    </div>
+</div>
+
+<!--indicator-->
+<div id="status-container" style="padding: 10px; border: 1px solid #ddd; display: inline-block;">
+    <span id="status-dot" class="dot"></span>
+    <span id="status-text">Connecting...</span>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

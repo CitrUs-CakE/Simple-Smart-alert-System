@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PRASANS WEBSITE</title>
+    <!--favicon-->
+    <link rel="icon" type="image/png" href="asset/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button id="menu-btn">➜</button>
+    <nav id="sidebar">
+        <a href="index.html">HOME</a>
+        <a href="dashboard.html">DASHBOARD</a>
+        <a href="manual.html">CONTROL</a>
+    </nav>
+<!-- appearing message -->
+<div id="flash">
+    <h1 class="typing-title" id="typing-title"></h1>
+    <div id="author-box" style="display: none;"> <!-- Initially hidden -->
+        <span class="by-text">BY</span>
+        <span class="author-names">
+            PRASAN • ERROL • SANDEEP
+        </span>
+    </div>
+</div>
+ <!-- main layout -->
+<div id="main">
+    <div class="card">
+    <p> Problem Statement<BR>It is hard to keep track of home safety, like temperature levels or gas leaks, when you are not there. Most systems only show numbers on a small screen in the room. Also, if there is a dangerous situation (like a gas leak), you usually cannot do anything to fix it unless you are physically at home to flip a switch.
+    <br><br>Solution Statement <br>I built a system using an ESP32 that constantly monitors sensors. It sends this data to a MySQL database using PHP so it can be shown on a graph on a website. This allows you to see safety levels from anywhere and use a "Remote Switch" to turn on safety devices (like a fan) using your phone or laptop. </p>
+    </div>
+
+     <div class="img-placeholder">SYSTEM HARDWARE OVERVIEW
+        <img src="asset/espbd.png" alt="System Hardware Diagram">
+    </div>
+    <div class="card">
+        <p> Project Objectives<br>
+        To monitor temperature and gas levels in real-time from any location.
+        To turn raw data into a visual graph that is easy to understand.
+        To allow remote control of appliances through a web dashboard.
+        To create an automatic safety system that works even without the internet.</p>
+    </div>
+    <div class="img-placeholder">SOFTWARE BLOCK DIAGRAM
+     <img src="asset/softbd.png" alt="System SOFTWARE Diagram">
+    </div>
+</div>
+    <div class="card">
+    <p> How it Fixes the Problem <br>
+This project uses two layers of safety:
+Local Control (If-Else): The ESP32 runs an "if-else" statement directly on the chip. For example: if the gas level is too high, then it turns on the exhaust fan immediately. This works locally even if the internet is down. </p>
+<br>
+Remote Control: At the same time, the user can see the gas levels on a website graph. If they want to take extra action, they can click a button on the website. This sends a command through PHP to the ESP32 to trigger the relay manually.
+Why I am making this project (What I want to study)<br>
+<br>I am making this project to learn:<br>
+Logic & Programming: How to use if-else statements to make a machine "think" and react to its environment.
+<br>
+Data Visualization: How to take numbers from a sensor and turn them into a moving graph on a webpage.
+<br>Backend Systems: How PHP acts as a bridge and MySQL acts as a memory for all the sensor data.
+<br>Web Design: How to use HTML and CSS to build a simple control panel that anyone can use to keep their home safe.
+</div>
+
+    <!-- Thermometer scroll indicator -->
+    <div id="scroll-thermometer">
+        <div id="thermometer-fill"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+
+</html>
